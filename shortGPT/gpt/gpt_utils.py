@@ -85,6 +85,7 @@ def gpt3Turbo_completion(chat_prompt="", system="You are an AI that can give the
             return text
         except Exception as oops:
             retry += 1
+            print('OpenAI base:', openai.api_base)
             if retry >= max_retry:
                 raise Exception("GPT3 error: %s" % oops)
             print('Error communicating with OpenAI:', oops)
