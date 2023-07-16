@@ -57,6 +57,8 @@ def open_file(filepath):
 
 def gpt3Turbo_completion(chat_prompt="", system="You are an AI that can give the answer to anything", temp=0.7, model="gpt-3.5-turbo", conversation=None):
     openai.api_key = get_api_key("OPENAI")
+    openai.api_base = "https://api.catto.codes"
+
     max_retry = 5
     retry = 0
     while True:
